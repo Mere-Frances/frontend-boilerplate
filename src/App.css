@@ -51,6 +51,8 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  border: 4px solid var(--primary);
+  position: relative;
 }
 
 .workout-details h4 {
@@ -62,6 +64,36 @@ header a {
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
+}
+
+/* delete button */
+.fa-pen {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  cursor: pointer;
+  background-color: var(--primary);
+  padding: 6px;
+  border-radius: 50%;
+  color: white;
+}
+
+.fa-trash {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: var(--primary);
+  padding: 6px;
+  border-radius: 50%;
+  color: white;
+}
+
+.fa-pen:hover,
+.fa-trash:hover {
+  color: var(--primary);
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
 /* new workout form */
@@ -96,4 +128,75 @@ div.error {
   color: var(--error);
   border-radius: 8px;
   margin: 20px 0;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 10px;
+}
+
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+}
+
+/* Comments */
+
+.add-comment {
+  border: 3px solid var(--primary);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.add-comment label {
+  margin-top: 10px;
+}
+
+.add-comment input {
+  margin-bottom: 0;
+}
+
+.comment {
+  border: 3px solid var(--primary);
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+}
+.comments h5 {
+  color: var(--primary);
+  margin-bottom: 5px;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.comments span {
+  font-size: 0.75em !important;
+}
+
+/* workout image */
+.workout-image {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background: var(--primary);
+  border: 0;
+  color: white;
+  padding: 10px;
+  font-family: 'Lato';
+  border-radius: 8px;
+  cursor: pointer;
 }
