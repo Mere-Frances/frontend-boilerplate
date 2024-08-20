@@ -105,7 +105,6 @@ const WorkoutDetails = ({workout}) => {
     navigate(path)
   }
 
-  // Function to split the email address
   const getEmailCharactersBeforeAtSymbol = (email) => {
     const delimiter = '@';
     const parts = email.split(delimiter);
@@ -152,13 +151,16 @@ const WorkoutDetails = ({workout}) => {
           <p><strong>Created by: </strong>{workout.user_id ? getEmailCharactersBeforeAtSymbol(workout.user_id) : 'Unknown'}</p>
           <button onClick={handleNavigate}>Read More</button>
 
-          {/* Delete/Edit Buttons */}
-          <span onClick={handleEdit}>
-            <i className='fa-solid fa-pen'></i>
-          </span>
-          <span onClick={handleDelete}>
-            <i className='fa-solid fa-trash'></i>
-          </span>
+          {workout.user_id === user_id && (
+            <>
+              <span onClick={handleEdit}>
+                <i className='fa-solid fa-pen'></i>
+              </span>
+              <span onClick={handleDelete}>
+                <i className='fa-solid fa-trash'></i>
+              </span>
+            </>
+          )}
         </>
       )}
       <button
@@ -175,7 +177,7 @@ const WorkoutDetails = ({workout}) => {
           <div className='comments'>
             {workout.comments.map((comment) => (
               <div key={comment._id} className='comment'>
-              <h5>{getEmailCharactersBeforeAtSymbol(comment.user_id)}</h5>
+                <h5>{getEmailCharactersBeforeAtSymbol(comment.user_id)}</h5>
                 <p>{comment.text}</p>
                 <span>
                   Posted: {formatDistanceToNow(new Date(comment.createdAt), {includeSeconds: true})}{' '}ago
